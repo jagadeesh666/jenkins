@@ -21,13 +21,13 @@ node {
 pipeline {
 agent any
     echo "hello world"
-    stage ("Checkout")
+    stage ("Checkout1")
     {
         echo "inside stage checkout"
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credent$
         echo "checkout finished"
     }
-    stage("second stage")
+    stage("second stage1")
     {
         echo "inside stage2 checkout running shell script"
 
