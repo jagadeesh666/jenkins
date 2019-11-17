@@ -26,7 +26,14 @@ agent any
 	    { steps
 		{
         	  sh ' echo "hello world jags" '
-		   sh ' git clone "https://github.com/jagadeesh666/jenkins.git "   '	
+			sh '		      folder="jenkins"
+if ! git clone "${https://github.com/jagadeesh666/}" "${folder}" 2>/dev/null && [ -d "${folder}" ] ;
+ then
+    echo "Clone failed because the folder ${folder} exists"
+fi '
+		      sh ' git clone "https://github.com/jagadeesh666/jenkins.git "   '
+ 		    sh 'ls'
+	
 		     echo "inside stage checkout"
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666', url: 'https://github.com/jagadeesh666/HmrcAutomationPractice.git']]])
 
