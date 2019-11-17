@@ -23,9 +23,11 @@ agent any
 //    echo "hello world"
     stages 
 	{stage ("Checkout111")
-	    { steps{
-        	sh ' echo "hello world jags" '	
-		echo "inside stage checkout"
+	    { steps
+		{
+        	  sh ' echo "hello world jags" '
+		   sh ' git clone "https://github.com/jagadeesh666/jenkins.git "   '	
+		     echo "inside stage checkout"
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666', url: 'https://github.com/jagadeesh666/HmrcAutomationPractice.git']]])
 
         echo "checkout finished"
