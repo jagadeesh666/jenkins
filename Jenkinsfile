@@ -24,7 +24,7 @@ agent any
     stage ("Checkout1")
     {
         echo "inside stage checkout"
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credent$
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666'$
         echo "checkout finished"
     }
     stage("second stage1")
