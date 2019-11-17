@@ -24,7 +24,8 @@ agent any
     stage ("Checkout11")
     {
         echo "inside stage checkout"
-        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666'$
+        checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666', url: 'https://github.com/jagadeesh666/HmrcAutomationPractice.git']]])
+
         echo "checkout finished"
     }
     stage ("second stage11")
