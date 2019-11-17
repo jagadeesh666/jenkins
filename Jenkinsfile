@@ -33,7 +33,7 @@ agent any
  //fi '
 //		      sh ' git clone "https://github.com/jagadeesh666/jenkins.git "   '
  //		    sh 'ls'
-	
+	sh ' git checkout -b master origin/master' 
 		     echo "inside stage checkout"
         checkout([$class: 'GitSCM', branches: [[name: '*/master']], doGenerateSubmoduleConfigurations: false, extensions: [], submoduleCfg: [], userRemoteConfigs: [[credentialsId: 'jags666', url: 'https://github.com/jagadeesh666/HmrcAutomationPractice.git']]])
 
